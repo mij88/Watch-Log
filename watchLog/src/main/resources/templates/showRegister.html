@@ -32,12 +32,29 @@
     </div>
 </nav>
 
-<div class="container text-center my-5">
-    <h1>WELCOME TO WATCHLOG </h1>
-    <h6>You can add shows that you want to watch in the future by clicking on the "Add New Show" button.
-    You can also log and keep track of shows that you have already watched by adding shows to "Watched Shows" page</h6>
-    <img src="/images/rick_morty.png" width="400px" style="margin-top: 40px;"/>
+<div class="container">
+
+    <form class="col-md-4 offset-md-4 my-5 p-5 " style="border:1px solid black;" th:action="@{/save}" method ="post">
+        <h4 class="text-center">Add Show</h4>
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" name="name">
+        </div>
+
+        <div class="mb-3">
+            <label for="date" class="form-label">Date</label>
+            <input type="text" class="form-control" name="date">
+        </div>
+
+        <div class="mb-3">
+            <label for="genre" class="form-label">Genre</label>
+            <input type="text" class="form-control" name="genre">
+        </div>
+
+        <button type="submit" class="btn btn-primary text-align:center;">Submit</button>
+    </form>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
