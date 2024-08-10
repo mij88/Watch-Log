@@ -1,12 +1,13 @@
 package com.watchLog.watchLog.controller;
 
 import com.watchLog.watchLog.entity.Shows;
+import com.watchLog.watchLog.entity.WatchedShowList;
 import com.watchLog.watchLog.service.ShowService;
+import com.watchLog.watchLog.service.WatchedShowListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -16,6 +17,9 @@ public class ShowController {
 
     @Autowired
     private ShowService service;
+
+    @Autowired
+    private WatchedShowListService watchedShowListService;
 
     @GetMapping
     public String home() { return "home";}
@@ -35,4 +39,22 @@ public class ShowController {
         service.save(s);
         return "redirect:/show_list";
     }
+
+    @GetMapping("/watched_shows")
+    public String watchedShow(Model model) {
+        List<WatchedShowList> list = watchedShowListService.getAllWatchedShows();
+        model.addAttribute("shows", list);
+        return "watchedShow";
+    }
+
+    @RequestMapping("/watchedList/{id}")
+    public String getWatchedList(@PathVariable("id") int id) {
+        Shows s = service.getShowsById(id);
+
+        WatchedShowList ws = new WatchedShowList(s.getId(), s.getName(), s.getDate(), s.getGenre(), "1", "0");
+        watchedShowListService.saveWatchedShows(ws);
+        return "redirect:/watched_shows";
+    }
+
+
 }

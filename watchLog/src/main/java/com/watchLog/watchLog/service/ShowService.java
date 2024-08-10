@@ -19,4 +19,8 @@ public class ShowService {
         return sRepo.findAll();
     }
 
+    public Shows getShowsById(int id) {
+        return sRepo.findById(id).get();
+    }
+
 }
