@@ -53,7 +53,22 @@ public class ShowController {
 
         WatchedShowList ws = new WatchedShowList(s.getId(), s.getName(), s.getDate(), s.getGenre(), "1", "0");
         watchedShowListService.saveWatchedShows(ws);
+        service.deleteById(id);
         return "redirect:/watched_shows";
+    }
+
+
+    @RequestMapping("/editShow/{id}")
+    public String editShow(@PathVariable("id") int id, Model model) {
+        Shows s = service.getShowsById(id);
+        model.addAttribute("shows", s);
+        return "showEdit";
+    }
+
+    @RequestMapping("/deleteShow/{id}")
+    public String deleteShow(@PathVariable("id") int id) {
+        service.deleteById(id);
+        return "redirect:/show_list";
     }
 
 

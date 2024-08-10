@@ -23,4 +23,8 @@ public class ShowService {
         return sRepo.findById(id).get();
     }
 
+    public void deleteById(int id) {
+        sRepo.deleteById(id);
+    }
+
 }
