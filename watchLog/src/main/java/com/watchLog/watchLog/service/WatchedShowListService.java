@@ -20,4 +20,8 @@ public class WatchedShowListService {
     public List<WatchedShowList> getAllWatchedShows() {
         return watchedShows.findAll();
     }
+
+    public void deleteById(int id) {
+        watchedShows.deleteById(id);
+    }
 }
