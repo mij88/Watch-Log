@@ -44,7 +44,7 @@ public class DroppedShowListController {
         return "redirect:/dropped_shows";
     }
 
-    @RequestMapping("/MoveDroppedToCurrentShow/{id}")
+    @RequestMapping("/moveDroppedToCurrentShow/{id}")
     public String restoreCurrentShow(@PathVariable("id") int id) {
         DroppedShowList ds = service.getShowsById(id);
 
