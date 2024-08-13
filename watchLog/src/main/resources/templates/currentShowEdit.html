@@ -24,7 +24,7 @@
                     <a class="nav-link text-white" href="/show_list"><i class="fa-solid fa-list"></i> Show List</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="/watched_shows"><i class="fa-solid fa-eye"></i> Current Shows</a>
+                    <a class="nav-link text-white" href="/watched_shows"><i class="fa-solid fa-eye"></i> Watching Now</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" href="/paused_shows"><i class="fa-solid fa-pause"></i> Paused Shows</a>
@@ -43,7 +43,7 @@
 <div class="container">
 
     <form class="col-md-4 offset-md-4 my-5 p-5 " style="border:1px solid black;" th:action="@{/saveWatchedShow}" method ="post" th:object="${shows}">
-        <h4 class="text-center">Edit Current Show</h4>
+        <h4 class="text-center">Edit Watching Show</h4>
         <input type="hidden" name = "id" th:value="${shows.id}">
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>

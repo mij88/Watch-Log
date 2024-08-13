@@ -13,3 +13,49 @@
 .btn-success {
     margin-right: 10px;
 }
+
+.btn-warning, .btn-purple, .btn-info, .btn-danger {
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+    border-color: #d39e00;
+}
+
+.btn-purple {
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+    color:white;
+}
+
+.btn-purple:hover {
+    background-color: #5a32a3;
+    border-color: #5a32a3;
+    color: white;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+.btn-info:hover {
+    background-color: #138496;
+    border-color: #117a8b;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+
+.btn:focus, .btn:active {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
