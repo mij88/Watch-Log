@@ -1,6 +1,7 @@
 package com.watchLog.watchLog.service;
 
 import com.watchLog.watchLog.entity.DroppedShowList;
+import com.watchLog.watchLog.entity.WatchedShowList;
 import com.watchLog.watchLog.repository.DroppedShowRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,8 +18,12 @@ public class DroppedShowService {
         droppedShows.save(show);
     }
 
-    public List<DroppedShowList> getDroppedShows() {
+    public List<DroppedShowList> getAllDroppedShows() {
         return droppedShows.findAll();
+    }
+
+    public DroppedShowList getShowsById(int id) {
+        return droppedShows.findById(id).get();
     }
 
     public void deleteById(int id) {

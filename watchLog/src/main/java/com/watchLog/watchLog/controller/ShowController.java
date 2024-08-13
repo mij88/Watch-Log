@@ -54,7 +54,7 @@ public class ShowController {
         WatchedShowList ws = new WatchedShowList(s.getId(), s.getName(), s.getDate(), s.getGenre(), "1", "0");
         watchedShowListService.saveWatchedShows(ws);
         service.deleteById(id);
-        return "redirect:/watched_shows";
+        return "redirect:/show_list";
     }
 
 

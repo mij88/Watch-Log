@@ -25,6 +25,9 @@
                 <li class="nav-item">
                     <a class="nav-link text-white" href="/watched_shows">Current Shows</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/dropped_shows">Dropped Shows</a>
+                </li>
             </ul>
             <div>
                 <a class="nav-link text-white" href="/show_register">Add New Show</a>
@@ -49,7 +52,7 @@
             <td th:text="${s.date}"></td>
             <td th:text="${s.genre}"></td>
 
-            <td> <a class = "btn btn-secondary btn-sm" th:href = "@{/watchedList/{id}(id=${s.id})}">Add to Current Shows</a>
+            <td> <a class = "btn btn-success btn-sm" th:href = "@{/watchedList/{id}(id=${s.id})}">Add to Current Shows</a>
                 <a style="color:blue" th:href="@{/editShow/{id}(id=${s.id})}"><i class="fa-solid fa-pen-to-square ms-4"></i></a>
                 <a style="color:red" th:href="@{/deleteShow/{id}(id=${s.id})}"><i class="fa-solid fa-trash ms-4"></i></a>
             </td>

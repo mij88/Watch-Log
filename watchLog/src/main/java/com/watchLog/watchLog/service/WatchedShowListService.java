@@ -1,5 +1,6 @@
 package com.watchLog.watchLog.service;
 
+import com.watchLog.watchLog.entity.Shows;
 import com.watchLog.watchLog.entity.WatchedShowList;
 import com.watchLog.watchLog.repository.WatchedShowListRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,10 @@ public class WatchedShowListService {
 
     public List<WatchedShowList> getAllWatchedShows() {
         return watchedShows.findAll();
+    }
+
+    public WatchedShowList getShowsById(int id) {
+        return watchedShows.findById(id).get();
     }
 
     public void deleteById(int id) {
