@@ -44,7 +44,7 @@ public class ShowController {
     public String watchedShow(Model model) {
         List<WatchedShowList> list = watchedShowListService.getAllWatchedShows();
         model.addAttribute("shows", list);
-        return "watchedShow";
+        return "currentShow";
     }
 
     @RequestMapping("/watchedList/{id}")
