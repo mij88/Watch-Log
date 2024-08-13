@@ -40,12 +40,6 @@ public class ShowController {
         return "redirect:/show_list";
     }
 
-    @GetMapping("/watched_shows")
-    public String watchedShow(Model model) {
-        List<WatchedShowList> list = watchedShowListService.getAllWatchedShows();
-        model.addAttribute("shows", list);
-        return "currentShow";
-    }
 
     @RequestMapping("/watchedList/{id}")
     public String getWatchedList(@PathVariable("id") int id) {

@@ -39,28 +39,30 @@
         </div>
     </div>
 </nav>
-
-<h1 class="container text-center my-5">Show List</h1>
-
-<div class="container mb-5">
+<h1 class="container text-center my-5">Paused Shows</h1>
+<div class="container  mb-5">
     <table class="table table-striped table-hover">
         <thead>
         <tr>
             <th scope="col">Name</th>
             <th scope="col">Date</th>
             <th scope="col">Genre</th>
+            <th scope="col">Season</th>
+            <th scope="col">Episode</th>
             <th scope="col">Action</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="s : ${shows}">
-            <td th:text="${s.name}"></td>
+        <tr th:each = "s :${shows}">
+            <td th:text="${s.name}">td>
             <td th:text="${s.date}"></td>
             <td th:text="${s.genre}"></td>
+            <td th:text="${s.season}"></td>
+            <td th:text="${s.episode}"></td>
             <td>
-                <a class="btn btn-success btn-sm" th:href="@{/watchedList/{id}(id=${s.id})}">Add to Current Shows</a>
-                <a style="color:blue" th:href="@{/editShow/{id}(id=${s.id})}"><i class="fa-solid fa-pen-to-square ms-4"></i></a>
-                <a style="color:red" th:href="@{/deleteShow/{id}(id=${s.id})}"><i class="fa-solid fa-trash ms-4"></i></a>
+                <a class = "btn btn-success btn-sm" th:href = "@{/MoveDroppedToCurrentShow/{id}(id=${s.id})}">Add Back to Current Shows</a>
+                <a style="color:blue" th:href="@{/editDroppedShow/{id}(id=${s.id})}"><i class="fa-solid fa-pen-to-square ms-4"></i></a>
+                <a style="color:red" th:href="@{/deleteDroppedShow/{id}(id=${s.id})}"><i class="fa-solid fa-trash ms-4"></i></a>
             </td>
         </tr>
 

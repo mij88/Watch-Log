@@ -27,18 +27,19 @@ public class WatchedShowListController {
         return "redirect:/watched_shows";
     }
 
+    @GetMapping("/watched_shows")
+    public String watchedShow(Model model) {
+        List<WatchedShowList> list = service.getAllWatchedShows();
+        model.addAttribute("shows", list);
+        return "currentShow";
+    }
+
     @RequestMapping("/deleteWatchedShow/{id}")
     public String deleteWatchedShow(@PathVariable("id") int id) {
         service.deleteById(id);
         return "redirect:/watched_shows";
     }
 
-    @GetMapping("/dropped_shows")
-    public String droppedShow(Model model) {
-        List<DroppedShowList> list = droppedShowService.getAllDroppedShows();
-        model.addAttribute("shows", list);
-        return "droppedShow";
-    }
 
     @RequestMapping("/droppedList/{id}")
     public String getDroppedList(@PathVariable("id") int id) {
