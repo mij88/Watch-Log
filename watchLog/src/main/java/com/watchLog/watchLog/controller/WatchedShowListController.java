@@ -8,9 +8,7 @@ import com.watchLog.watchLog.service.WatchedShowListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,6 +20,12 @@ public class WatchedShowListController {
 
     @Autowired
     private DroppedShowService droppedShowService;
+
+    @PostMapping("/saveWatchedShow")
+    public String addWatchedShow(@ModelAttribute WatchedShowList ws) {
+        service.saveWatchedShows(ws);
+        return "redirect:/watched_shows";
+    }
 
     @RequestMapping("/deleteWatchedShow/{id}")
     public String deleteWatchedShow(@PathVariable("id") int id) {
@@ -44,6 +48,13 @@ public class WatchedShowListController {
         droppedShowService.saveDroppedShows(ds);
         service.deleteById(id);
         return "redirect:/watched_shows";
+    }
+
+    @RequestMapping("/editWatchedShow/{id}")
+    public String editShow(@PathVariable("id") int id, Model model) {
+        WatchedShowList ws = service.getShowsById(id);
+        model.addAttribute("shows", ws);
+        return "currentShowEdit";
     }
 
 }
