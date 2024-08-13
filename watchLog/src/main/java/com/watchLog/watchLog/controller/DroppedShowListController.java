@@ -1,8 +1,10 @@
 package com.watchLog.watchLog.controller;
 
 import com.watchLog.watchLog.entity.DroppedShowList;
+import com.watchLog.watchLog.entity.PausedShow;
 import com.watchLog.watchLog.entity.WatchedShowList;
 import com.watchLog.watchLog.service.DroppedShowService;
+import com.watchLog.watchLog.service.PausedShowService;
 import com.watchLog.watchLog.service.WatchedShowListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +21,9 @@ public class DroppedShowListController {
 
     @Autowired
     private WatchedShowListService watchedShowService;
+
+    @Autowired
+    private PausedShowService pausedShowService;
 
     @PostMapping("/saveDroppedShow")
     public String addDroppedShow(@ModelAttribute DroppedShowList ds) {
@@ -48,6 +53,18 @@ public class DroppedShowListController {
         service.deleteById(id);
 
        return "redirect:/dropped_shows";
+
+    }
+
+    @RequestMapping("/moveDroppedToPauseShow/{id}")
+    public String moveToPausedShow(@PathVariable("id") int id) {
+        DroppedShowList ds = service.getShowsById(id);
+
+        PausedShow ps = new PausedShow(ds.getId(), ds.getName(), ds.getDate(), ds.getGenre(), ds.getSeason(), ds.getEpisode());
+        pausedShowService.savePausedShows(ps);
+        service.deleteById(id);
+
+        return "redirect:/dropped_shows";
 
     }
 

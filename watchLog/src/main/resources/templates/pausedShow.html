@@ -60,9 +60,18 @@
             <td th:text="${s.season}"></td>
             <td th:text="${s.episode}"></td>
             <td>
-                <a class = "btn btn-success btn-sm" th:href = "@{/MoveDroppedToCurrentShow/{id}(id=${s.id})}">Add Back to Current Shows</a>
-                <a style="color:blue" th:href="@{/editDroppedShow/{id}(id=${s.id})}"><i class="fa-solid fa-pen-to-square ms-4"></i></a>
-                <a style="color:red" th:href="@{/deleteDroppedShow/{id}(id=${s.id})}"><i class="fa-solid fa-trash ms-4"></i></a>
+                <a class="btn btn-success btn-sm me-2" th:href="@{/MoveDroppedToCurrentShow/{id}(id=${s.id})}">
+                    <i class="fa-solid fa-eye"></i> Watching
+                </a>
+                <a class="btn btn-purple btn-sm me-2" th:href="@{/droppedList/{id}(id=${s.id})}">
+                    <i class="fa-solid fa-ban me-2"></i> Drop
+                </a>
+                <a class="btn btn-info btn-sm me-2" th:href="@{/editDroppedShow/{id}(id=${s.id})}">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </a>
+                <a class="btn btn-danger btn-sm" th:href="@{/deleteDroppedShow/{id}(id=${s.id})}">
+                    <i class="fa-solid fa-trash"></i>
+                </a>
             </td>
         </tr>
 
