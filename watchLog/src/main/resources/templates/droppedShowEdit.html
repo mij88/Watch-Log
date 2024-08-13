@@ -39,8 +39,8 @@
 
 <div class="container">
 
-    <form class="col-md-4 offset-md-4 my-5 p-5 " style="border:1px solid black;" th:action="@{/save}" method ="post" th:object="${shows}">
-        <h4 class="text-center">Add Show</h4>
+    <form class="col-md-4 offset-md-4 my-5 p-5 " style="border:1px solid black;" th:action="@{/saveDroppedShow}" method ="post" th:object="${shows}">
+        <h4 class="text-center">Edit Dropped Show</h4>
         <input type="hidden" name = "id" th:value="${shows.id}">
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
@@ -55,6 +55,16 @@
         <div class="mb-3">
             <label for="genre" class="form-label">Genre</label>
             <input type="text" class="form-control" name="genre" th:value="${shows.genre}">
+        </div>
+
+        <div class="mb-3">
+            <label for="season" class="form-label">Season</label>
+            <input type="text" class="form-control" name="season" th:value="${shows.season}">
+        </div>
+
+        <div class="mb-3">
+            <label for="episode" class="form-label">Episode</label>
+            <input type="text" class="form-control" name="episode" th:value="${shows.episode}">
         </div>
 
         <button type="submit" class="btn btn-primary text-align:center;">Submit</button>
