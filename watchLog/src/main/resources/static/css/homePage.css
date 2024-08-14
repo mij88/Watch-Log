@@ -1,0 +1,53 @@
+/* Black-themed background for the entire section */
+.container {
+    background: linear-gradient(135deg, #000000, #434343);
+    border-radius: 15px;
+    padding: 40px;
+    color: #ffffff;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+
+h1 {
+    font-size: 3rem;
+    color: #ffffff;
+    background: -webkit-linear-gradient(#bbbbbb, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 30px;
+}
+
+
+p.lead {
+    font-size: 1.5rem;
+    color: #cccccc;
+    margin-bottom: 20px;
+}
+
+ul.text-start {
+    list-style-type: none;
+    padding-left: 0;
+    display: inline-block;
+    text-align: left;
+    margin: 0 auto;
+}
+
+ul.text-start li {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: left;
+}
+
+
+strong {
+    color: #aaaaaa;
+}
+
+
+p {
+    color: #cccccc;
+}
