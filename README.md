@@ -27,7 +27,7 @@ Run WatchLogApplication file
 
 ### Video Tutorial
 
-[Tutorial Link] (https://github.com/user-attachments/assets/ef0da0c7-081e-4361-83fd-91c59d45ad9b)
+[Tutorial Link](https://github.com/user-attachments/assets/ef0da0c7-081e-4361-83fd-91c59d45ad9b)
 
 
 
